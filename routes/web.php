@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//use App\Http\Controllers\IndexController;
+//
+//Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/', 'IndexController@index')->name('main.index');
+Route::get('/about', 'AboutController@index')->name('about.index');
+Route::get('/contact', 'ContactController@index')->name('contact.index');
+Route::get('/post', 'PostController@index')->name('post.index');
+
